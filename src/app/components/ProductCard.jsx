@@ -57,7 +57,7 @@ export const ProductCard = ({ product }) => {
     };
 
     return (
-        <div className="w-full max-w-sm bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <div className="w-full max-w-sm h-68 bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
             {/* Carrusel de imágenes */}
             <div
                 ref={containerRef}
@@ -135,52 +135,6 @@ export const ProductCard = ({ product }) => {
                 </div>
             </div>
 
-            {/* Información del producto */}
-            <div className="p-4">
-                <div className="flex items-start justify-between mb-2">
-                    <h3 className="font-semibold text-lg text-gray-900 line-clamp-2">
-                        {product.name}
-                    </h3>
-                    <span className="text-xs text-gray-500 ml-2">#{product.id}</span>
-                </div>
-
-                <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                    {product.description}
-                </p>
-
-                {/* Selector de colores */}
-                <div className="mb-4">
-                    <p className="text-xs text-gray-500 mb-2">Colores disponibles:</p>
-                    <div className="flex gap-2">
-                        {product.colors.map((color, index) => (
-                            <button
-                                key={index}
-                                onClick={() => handleColorClick(index)}
-                                className={`w-8 h-8 rounded-full border-2 transition-all duration-200 flex items-center justify-center ${selectedColor === index && currentIndex === index + 2
-                                    ? 'border-blue-600 scale-110 shadow-md'
-                                    : 'border-gray-300 hover:border-gray-400'
-                                    }`}
-                                style={{ backgroundColor: color.hex }}
-                                title={color.name}
-                                aria-label={`Ver producto en color ${color.name}`}
-                            >
-                                {selectedColor === index && currentIndex === index + 2 && (
-                                    <span className="text-white text-lg font-bold">✓</span>
-                                )}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-gray-900">
-                        ${product.price.toLocaleString()}
-                    </span>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">
-                        Ver detalles
-                    </button>
-                </div>
-            </div>
         </div>
     );
 };
