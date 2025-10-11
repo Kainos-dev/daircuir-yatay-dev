@@ -1,5 +1,5 @@
 
-import { ProductCard2 } from "./ProductCard2"
+import { ProductCard } from "./ProductCard"
 
 const sampleProducts = [
     {
@@ -71,7 +71,7 @@ export const News = () => {
             <div className="mx-auto max-full">
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     {sampleProducts.map((product) => (
-                        <ProductCard2 key={product.id} product={product} />
+                        <ProductCard key={product.id} product={product} />
                     ))}
                 </div>
             </div>

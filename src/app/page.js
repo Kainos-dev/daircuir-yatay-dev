@@ -1,7 +1,7 @@
 
-import { ProductCard } from '@/app/components/ProductCard';
 import { Hero } from '@/app/components/Hero';
 import { News } from '@/app/components/News';
+import { Nofunction } from '@/app/components/Nofunction';
 
 export default function Home() {
 
@@ -14,8 +14,9 @@ export default function Home() {
 
   return (
     <>
-      <Hero images={images} />
-      <News />
+      <Nofunction />
+      {/* <Hero images={images} /> */}
+      {/* <News /> */}
     </>
   );
 }
