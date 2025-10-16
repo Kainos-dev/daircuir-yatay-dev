@@ -12,17 +12,17 @@ export const Navbar = () => {
         <nav className="absolute top-30 z-20 w-full p-4">
             <div className="flex justify-center items-center gap-8 mb-4">
                 <Image
-                    src="/images/logo-yatay-blanco.png"
+                    src="/images/logo-darccuir-blanco.png"
+                    className='hover:scale-105 transition-transform duration-100'
                     alt="Logo Yatay"
-                    /* className='border border-white' */
-                    width={110}
-                    height={110}
+                    width={120}
+                    height={120}
                     quality={90}
                 />
                 <Image
-                    src="/images/logo-darccuir-blanco.png"
-                    /* className='border border-white' */
+                    src="/images/logo-yatay-blanco.png"
                     alt="Logo Yatay"
+                    className='hover:scale-105 transition-transform duration-100'
                     width={120}
                     height={120}
                     quality={90}

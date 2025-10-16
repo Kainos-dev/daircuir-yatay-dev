@@ -60,7 +60,8 @@ export const Hero = ({ images }) => {
                 {images.map((src, index) => (
                     <div
                         key={src}
-                        className={`absolute inset-0 transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+                        className={`absolute inset-0 transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
+                            }`}
                     >
                         <Image
                             src={src}
@@ -76,6 +77,9 @@ export const Hero = ({ images }) => {
                 {/* Overlay oscuro para mejorar legibilidad */}
                 <div className="absolute inset-0 bg-black/60" />
 
+                {/* Overlay inferior para transicionar hacia la sección de novedades */}
+                <div className="absolute bottom-0 left-0 w-full h-15 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+
                 {/* Contenido sobre el carrusel */}
                 <div className="relative z-10 flex h-full flex-col items-center justify-center mt-12 px-4 text-center text-white">
                     <h1
@@ -85,39 +89,6 @@ export const Hero = ({ images }) => {
                         NOVEDADES
                     </h1>
                 </div>
-
-                {/* Flechas de navegación */}
-                {/*  <button  
-                className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full p-3 backdrop-blur-sm transition hover:bg-white/50 cursor-pointer"
-                aria-label="Anterior"
-            >
-                <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-            </button>
-            <button
-                className="absolute right-6 top-1/2 z-20 -translate-y-1/2 rounded-full p-3 backdrop-blur-sm transition hover:bg-white/50 cursor-pointer"
-                aria-label="Siguiente"
-            >
-                <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-            </button> */}
-
-                {/* Indicadores */}
-                {/* <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 gap-2">
-                {images.map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => goToSlide(index)}
-                        className={`h-2 rounded-full transition-all ${index === currentIndex
-                            ? 'w-8 bg-white'
-                            : 'w-2 bg-white/50 hover:bg-white/75'
-                            }`}
-                        aria-label={`Ir a imagen ${index + 1}`}
-                    />
-                ))}
-            </div> */}
             </section>
         </>
     );
