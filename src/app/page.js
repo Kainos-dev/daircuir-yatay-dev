@@ -14,9 +14,9 @@ export default function Home() {
 
   return (
     <>
-      {/* <Nofunction /> */}
-      <Hero images={images} />
-      <News />
+      <Nofunction />
+      {/* <Hero images={images} />
+      <News /> */}
     </>
   );
 }
