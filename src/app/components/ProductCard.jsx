@@ -11,12 +11,6 @@ import { barlow } from '@/app/ui/fonts';
 export const ProductCard = ({ product }) => {
     const [isHovered, setIsHovered] = useState(false);
 
-    const handleClick = () => {
-        // Aquí irá la navegación a la vista detalle
-        console.log('Ir a detalle del producto:', product.id);
-        // Ejemplo: router.push(`/productos/${product.id}`);
-    };
-
     const formatPrice = (price) => {
         return new Intl.NumberFormat('es-AR', {
             style: 'currency',
@@ -25,9 +19,15 @@ export const ProductCard = ({ product }) => {
         }).format(price);
     };
 
+    // Determinar qué imagen mostrar
+    const hasMultipleCoverImages = product.coverImages && product.coverImages.length >= 2;
+    const hasCoverImages = product.coverImages && product.coverImages.length > 0;
+    const mainImage = hasCoverImages ? product.coverImages[0] : product.variants[0]?.images[0];
+    const alternativeImage = hasMultipleCoverImages ? product.coverImages[1] : null;
+
     return (
         <Link
-            href={`/products/${product.id}`} // ruta dinámica
+            href={`/products/${product.id}`}
             className="block"
         >
             <div
@@ -36,23 +36,40 @@ export const ProductCard = ({ product }) => {
                 onMouseLeave={() => setIsHovered(false)}
             >
                 {/* Contenedor de imagen */}
-                <div className="relative w-full overflow-hidden rounded- bg-none flex-shrink-0">
-                    <Image
-                        src={product.coverImages[0]}
-                        alt={product.name}
-                        width={600}
-                        height={600}
-                        className={`w-full h-auto object-cover transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`}
-                    />
-                    <Image
-                        src={product.coverImages[1]}
-                        alt={`${product.name} - Vista alternativa`}
-                        fill
-                        className={`object-cover transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
-                    />
-                    <span className="absolute top-0 left-0 bg-[#A27B5C] text-white py-1 px-2 font-semibold">
-                        { product.collection  }
-                    </span>
+                <div className="relative w-full overflow-hidden rounded-md bg-none flex-shrink-0">
+                    {hasMultipleCoverImages ? (
+                        <>
+                            <Image
+                                src={mainImage}
+                                alt={product.name}
+                                width={600}
+                                height={600}
+                                className={`w-full h-auto object-cover transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'
+                                    }`}
+                            />
+                            <Image
+                                src={alternativeImage}
+                                alt={`${product.name} - Vista alternativa`}
+                                fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                className={`object-cover transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
+                            />
+                        </>
+                    ) : (
+                        <Image
+                            src={mainImage}
+                            alt={product.name}
+                            width={600}
+                            height={600}
+                            className="w-full h-auto object-cover"
+                        />
+                    )}
+                    {product.collection?.some(item => item.toLowerCase() === "senderos") && (
+                        <span className="absolute top-0 left-0 bg-[#A27B5C] rounded-tl-md text-white py-1 px-2 font-semibold">
+                            SENDEROS
+                        </span>
+                    )}
+
                 </div>
 
                 <div className="p-4 sm:p-6 lg:p-8 mt-4 sm:mt-8 lg:mt-12 relative flex-1 flex flex-col justify-between">
@@ -61,19 +78,23 @@ export const ProductCard = ({ product }) => {
                     </h2>
 
                     <div className="flex w-full justify-between items-center mt-2 sm:mt-3 lg:mt-4 text-base sm:text-lg lg:text-2xl">
-                        <span>{formatPrice(product.price)}</span>
+                        {
+                            product.price > 0 && (
+                                <span>{formatPrice(product.price)}</span>
+                            )
+                        }
                         <div className="flex items-center gap-1">
-                            {product.variants.slice(0, 2).map((color) => (
+                            {product.variants.slice(0, 2).map((variant) => (
                                 <div
-                                    key={color.color.name}
+                                    key={variant.color.name}
                                     className="w-6 h-6 rounded-full border"
-                                    style={{ backgroundColor: color.color.hex }}
-                                    title={color.color.name}
+                                    style={{ backgroundColor: variant.color.hex }}
+                                    title={variant.color.name}
                                 ></div>
                             ))}
                             {product.variants.length > 2 && (
                                 <span className="text-sm sm:text-base">
-                                    +2
+                                    +{product.variants.length - 2}
                                 </span>
                             )}
                         </div>
@@ -82,4 +103,4 @@ export const ProductCard = ({ product }) => {
             </div>
         </Link>
     );
-}
+};

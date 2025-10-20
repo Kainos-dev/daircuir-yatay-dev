@@ -20,30 +20,10 @@ export const Hero = ({ images }) => {
             setCurrentIndex((prevIndex) =>
                 prevIndex === images.length - 1 ? 0 : prevIndex + 1
             );
-        }, 2500); // Cambia cada 5 segundos
+        }, 2500);
 
         return () => clearInterval(interval);
     }, [currentIndex, isPaused]);
-
-    /* const resetInterval = () => {
-        setIsPaused(true);
-        setTimeout(() => setIsPaused(false), 100);
-    };
-
-    const goToSlide = (index) => {
-        setCurrentIndex(index);
-        resetInterval();
-    };
-
-    const goToPrevious = () => {
-        setCurrentIndex(currentIndex === 0 ? images.length - 1 : currentIndex - 1);
-        resetInterval();
-    };
-
-    const goToNext = () => {
-        setCurrentIndex(currentIndex === images.length - 1 ? 0 : currentIndex + 1);
-        resetInterval();
-    }; */
 
     const scrollToNovedades = () => {
         const novedadesSection = document.getElementById('novedades');
@@ -55,7 +35,7 @@ export const Hero = ({ images }) => {
     return (
         <>
             <Navbar />
-            <section className="relative h-screen w-full overflow-hidden">
+            <section className="relative w-full h-screen max-h-screen overflow-hidden">
                 {/* Imágenes del carrusel */}
                 {images.map((src, index) => (
                     <div
@@ -74,17 +54,17 @@ export const Hero = ({ images }) => {
                     </div>
                 ))}
 
-                {/* Overlay oscuro para mejorar legibilidad */}
+                {/* Overlay oscuro */}
                 <div className="absolute inset-0 bg-black/60" />
 
-                {/* Overlay inferior para transicionar hacia la sección de novedades */}
-                <div className="absolute bottom-0 left-0 w-full h-15 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+                {/* Overlay inferior */}
+                <div className="absolute bottom-0 left-0 w-full h-12 sm:h-16 md:h-20 lg:h-24 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
 
-                {/* Contenido sobre el carrusel */}
-                <div className="relative z-10 flex h-full flex-col items-center justify-center mt-12 px-4 text-center text-white">
+                {/* Contenido */}
+                <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-white">
                     <h1
                         onClick={scrollToNovedades}
-                        className={`mb-4 text-5xl font-bold md:text-7xl lg:text-8xl ${habibi.className} tracking-widest text-[#e3e4e5] cursor-pointer hover:scale-110 transition-transform`}
+                        className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold ${habibi.className} tracking-widest text-[#e3e4e5] cursor-pointer hover:scale-105 sm:hover:scale-110 transition-transform duration-300`}
                     >
                         NOVEDADES
                     </h1>
@@ -92,4 +72,4 @@ export const Hero = ({ images }) => {
             </section>
         </>
     );
-}
+};
