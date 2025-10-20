@@ -2,24 +2,26 @@
 import { Hero } from '@/app/components/Hero';
 import { News } from '@/app/components/News';
 import { Nofunction } from '@/app/components/Nofunction';
-//fonts
 import { barlow } from '@/app/ui/fonts';
-//icons
 import { FaWhatsapp } from "react-icons/fa";
+import React from 'react'; // Asegúrate de tener esto importado
 
 export default function Home() {
-
   const images = [
-    '/images/bg-hero-01.jpg',  // Imagen 0 - Portada 1
-    '/images/bg-hero-02.jpg',  // Imagen 1 - Portada 2
-    '/images/bg-hero-03.jpg',  //
-  ]
-
+    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760930764/bg-hero-01_tajkro.jpg',
+    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760930764/bg-hero-02_tim0wf.jpg',
+    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760930763/bg-hero-03_jmk49f.jpg',
+  ];
 
   return (
     <>
       {/* <Nofunction /> */}
-      <Hero images={images} />
+
+      {/* ✅ Wrapping client component in Suspense */}
+      <React.Suspense fallback={<div>Cargando portada...</div>}>
+        <Hero images={images} />
+      </React.Suspense>
+
       <section className={`${barlow.className} max-w-5xl mx-auto text-center mt-40 px-4 py-10 text-gray-800 lg:text-lg xl:text-2xl`}>
         <h2 className="font-semibold mb-4">Actualización en curso</h2>
         <p className="leading-relaxed">
@@ -43,7 +45,10 @@ export default function Home() {
         <FaWhatsapp size={28} />
       </a>
 
-      <News />
+      {/* ✅ Wrapping another client component in Suspense */}
+      <React.Suspense fallback={<div>Cargando novedades...</div>}>
+        <News />
+      </React.Suspense>
     </>
   );
 }
