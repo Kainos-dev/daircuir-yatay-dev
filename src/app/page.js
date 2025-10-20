@@ -1,10 +1,12 @@
-
+import React from 'react'; 
+//components
 import { Hero } from '@/app/components/Hero';
 import { News } from '@/app/components/News';
 import { Nofunction } from '@/app/components/Nofunction';
+//fonts
 import { barlow } from '@/app/ui/fonts';
+//icons
 import { FaWhatsapp } from "react-icons/fa";
-import React from 'react'; // Asegúrate de tener esto importado
 
 export default function Home() {
   const images = [

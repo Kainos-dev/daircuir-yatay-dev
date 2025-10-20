@@ -95,7 +95,18 @@ export default function ProductDetailsClient({ product }) {
             {/* Información del Producto */}
             <div className={`${barlow.className} relative lg:w-1/2 w-full flex flex-col gap-6 p-6 lg:p-12 overflow-y-auto`}>
                 <div>
-                    <p className="text-sm text-white uppercase tracking-wide bg-[#90682f] px-2 py-1 rounded-sm inline">{product.collection}</p>
+                    {product.collection &&
+                        product.collection
+                            .filter(item => item.toLowerCase() !== "news") // quitamos "news"
+                            .length > 0 && (
+                            <p className="text-sm lg:text-base text-white uppercase tracking-wide bg-[#90682f] px-2 py-1 rounded-sm inline">
+                                {product.collection
+                                    .filter(item => item.toLowerCase() !== "news") // filtramos "news"
+                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1)) // capitalizamos
+                                    .join(" / ")} {/* unimos con '/' */}
+                            </p>
+                        )}
+
                     <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold text-gray-900 mt-4 lg:mt-10">{product.name}</h1>
                 </div>
 
@@ -135,7 +146,8 @@ export default function ProductDetailsClient({ product }) {
                 {/* Botón Volver */}
                 <button
                     onClick={handleBack}
-                    className="px-2 lg:px-4 py-1 lg:py-2 bg-[#90682f] text-white rounded hover:bg-[#9b7d53] absolute bottom-4 lg:bottom-12 right-4 lg:right-12 text-center"
+                    className="px-2 lg:px-4 py-1 lg:py-2 bg-[#90682f] text-center text-white
+                    rounded hover:bg-[#9b7d53] text-sm lg:text-base mt-20 w-[20%] lg:absolute lg:bottom-12 lg:right-12"
                 >
                     VOLVER
                 </button>
