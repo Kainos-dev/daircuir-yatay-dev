@@ -42,7 +42,7 @@ export default function Home() {
         href="https://wa.me/5491165691369?text=¡Hola!%20Quisiera%20hacer%20una%20consulta."
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-[#A27B5C] text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110 animate-pulse"
+        className="fixed bottom-6 right-6 z-50 bg-[#25d366] text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110"
       >
         <FaWhatsapp size={28} />
       </a>

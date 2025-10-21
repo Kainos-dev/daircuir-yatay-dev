@@ -11,8 +11,11 @@ export const News = () => {
 
     const filteredProducts = activeFilter
         ? sampleProducts.filter((product) =>
-            product.collection?.some(
-                (collection) => collection.toLowerCase() === activeFilter.toLowerCase()
+            product.collection?.some((collection) =>
+                collection
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                    .toLowerCase() === activeFilter.toLowerCase()
             )
         )
         : sampleProducts;

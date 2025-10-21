@@ -19,7 +19,7 @@ export const Navbar = () => {
             if (novedadesSection) {
                 novedadesSection.scrollIntoView({ behavior: 'smooth' });
             }
-        }, 100);
+        }, 150);
     };
 
     const handleFilterClick = (item) => {
