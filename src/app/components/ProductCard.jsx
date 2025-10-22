@@ -77,7 +77,7 @@ export const ProductCard = ({ product }) => {
                         {product.name}
                     </h2>
 
-                    <div className="flex w-full justify-between items-center mt-2 sm:mt-3 lg:mt-4 text-base sm:text-lg lg:text-2xl">
+                    <div className={`flex w-full ${ product.price == 0 ? "justify-end" : "justify-between" } items-center mt-2 sm:mt-3 lg:mt-4 text-base sm:text-lg lg:text-2xl`}>
                         {
                             product.price > 0 && (
                                 <span>{formatPrice(product.price)}</span>
@@ -99,6 +99,7 @@ export const ProductCard = ({ product }) => {
                             )}
                         </div>
                     </div>
+                    <span>{product.id}</span>
                 </div>
             </div>
         </Link>

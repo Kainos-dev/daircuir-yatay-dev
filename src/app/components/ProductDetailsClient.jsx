@@ -8,26 +8,37 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { barlow } from "@/app/ui/fonts";
 
 
+
+
 export default function ProductDetailsClient({ product }) {
     const router = useRouter();
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const hasVariants = product.variants && product.variants.length > 0;
     const [selectedVariant, setSelectedVariant] = useState(hasVariants ? product.variants[0] : null);
 
-    const allImagesInProduct = hasVariants
-        ? [...product.coverImages, ...product.variants.flatMap(v => v.images)]
+    // Verificar si algún variant tiene imágenes
+    const hasVariantImages = hasVariants && product.variants.some(v => v.images && v.images.length > 0);
+
+    // Construir array de imágenes solo con variants que tengan imágenes
+    const allImagesInProduct = hasVariantImages
+        ? [...product.coverImages, ...product.variants.filter(v => v.images && v.images.length > 0).flatMap(v => v.images)]
         : product.coverImages;
 
     const getFirstImageIndexOfVariant = (variant) => {
-        if (!hasVariants) return 0;
+        if (!hasVariants || !variant.images || variant.images.length === 0) return null;
+
         const coverImagesCount = product.coverImages.length;
         let currentIndex = coverImagesCount;
 
         for (let v of product.variants) {
-            if (v.color.hex === variant.color.hex) return currentIndex;
-            currentIndex += v.images.length;
+            if (v.color.hex === variant.color.hex) {
+                return v.images && v.images.length > 0 ? currentIndex : null;
+            }
+            if (v.images && v.images.length > 0) {
+                currentIndex += v.images.length;
+            }
         }
-        return 0;
+        return null;
     };
 
     const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % allImagesInProduct.length);
@@ -35,7 +46,12 @@ export default function ProductDetailsClient({ product }) {
 
     const handleColorChange = (variant) => {
         setSelectedVariant(variant);
-        setCurrentImageIndex(getFirstImageIndexOfVariant(variant));
+        const imageIndex = getFirstImageIndexOfVariant(variant);
+        // Solo cambiar índice si el variant tiene imágenes
+        if (imageIndex !== null) {
+            setCurrentImageIndex(imageIndex);
+        }
+        // Si no tiene imágenes, mantener el índice actual (no hacer nada)
     };
 
     const handleBack = () => {
@@ -97,13 +113,13 @@ export default function ProductDetailsClient({ product }) {
                 <div>
                     {product.collection &&
                         product.collection
-                            .filter(item => item.toLowerCase() !== "news") // quitamos "news"
+                            .filter(item => item.toLowerCase() !== "news")
                             .length > 0 && (
                             <p className="text-sm lg:text-base text-white uppercase tracking-wide bg-[#90682f] px-2 py-1 rounded-sm inline">
                                 {product.collection
-                                    .filter(item => item.toLowerCase() !== "news") // filtramos "news"
-                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1)) // capitalizamos
-                                    .join(" / ")} {/* unimos con '/' */}
+                                    .filter(item => item.toLowerCase() !== "news")
+                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1))
+                                    .join(" / ")}
                             </p>
                         )}
 
@@ -121,22 +137,25 @@ export default function ProductDetailsClient({ product }) {
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Colores Disponibles</h3>
                     {hasVariants ? (
                         <div className="flex flex-wrap gap-3">
-                            {product.variants.map((variant) => (
-                                <button
-                                    key={variant.color.hex}
-                                    onClick={() => handleColorChange(variant)}
-                                    className={`flex items-center gap-2 px-3 lg:px-4 py-2 rounded-lg border-2 transition ${selectedVariant.color.hex === variant.color.hex
-                                        ? 'border-gray-800 bg-gray-50'
-                                        : 'border-gray-300 hover:border-gray-500'
-                                        }`}
-                                >
-                                    <div
-                                        className="w-5 h-5 lg:w-6 lg:h-6 rounded-full border border-gray-300"
-                                        style={{ backgroundColor: variant.color.hex }}
-                                    />
-                                    <span className="text-sm lg:text-base font-medium">{variant.color.name}</span>
-                                </button>
-                            ))}
+                            {product.variants.map((variant) => {
+                                const hasImages = variant.images && variant.images.length > 0;
+                                return (
+                                    <button
+                                        key={variant.color.hex}
+                                        onClick={() => handleColorChange(variant)}
+                                        className={`flex items-center gap-2 px-3 lg:px-4 py-2 rounded-lg border-2 transition ${selectedVariant?.color.hex === variant.color.hex
+                                                ? 'border-gray-800 bg-gray-50'
+                                                : 'border-gray-300 hover:border-gray-500'
+                                            } }`}
+                                    >
+                                        <div
+                                            className="w-5 h-5 lg:w-6 lg:h-6 rounded-full border border-gray-300"
+                                            style={{ backgroundColor: variant.color.hex }}
+                                        />
+                                        <span className="text-sm lg:text-base font-medium">{variant.color.name}</span>
+                                    </button>
+                                );
+                            })}
                         </div>
                     ) : (
                         <p className="text-gray-600 italic">Este producto no tiene variantes de color.</p>

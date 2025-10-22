@@ -1,8 +1,8 @@
-'use client'
-// Navbar component:
-import { useState } from 'react';
+
+// Navbar.jsx
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
+import { useState, useEffect, useTransition } from 'react';
 import { habibi } from '@/app/ui/fonts';
 
 const navigationItems = ["CALZADO DE DAMA", "CALZADO DE HOMBRE", "RINCÓN MATERO", "SENDEROS", "ACCESORIOS"];
@@ -12,14 +12,32 @@ export const Navbar = () => {
     const searchParams = useSearchParams();
     const activeFilter = searchParams.get('category');
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isPending, startTransition] = useTransition();
 
+    // Función mejorada de scroll con más reintentos y mejor timing
     const scrollToNovedades = () => {
-        setTimeout(() => {
+        const attemptScroll = (attempts = 0) => {
             const novedadesSection = document.getElementById('novedades');
+
             if (novedadesSection) {
-                novedadesSection.scrollIntoView({ behavior: 'smooth' });
+                // Verificar que el elemento esté realmente renderizado
+                const rect = novedadesSection.getBoundingClientRect();
+                if (rect.height > 0) {
+                    novedadesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    return;
+                }
             }
-        }, 150);
+
+            // Aumentar reintentos a 20 (2 segundos) para dispositivos lentos
+            if (attempts < 20) {
+                setTimeout(() => attemptScroll(attempts + 1), 100);
+            } else {
+                console.warn('No se pudo encontrar la sección de novedades después de 2 segundos');
+            }
+        };
+
+        // Dar tiempo a que la ruta se actualice
+        setTimeout(() => attemptScroll(), 300);
     };
 
     const handleFilterClick = (item) => {
@@ -28,13 +46,22 @@ export const Navbar = () => {
             .replace(/[\u0300-\u036f]/g, "");
 
         setIsMobileMenuOpen(false);
-        router.push(`/?category=${encodeURIComponent(normalizedItem)}`);
+
+        // Usar startTransition para mejor manejo de la navegación
+        startTransition(() => {
+            router.push(`/?category=${encodeURIComponent(normalizedItem)}`, { scroll: false });
+        });
+
         scrollToNovedades();
     };
 
     const handleAllProducts = () => {
         setIsMobileMenuOpen(false);
-        router.push('/');
+
+        startTransition(() => {
+            router.push('/', { scroll: false });
+        });
+
         scrollToNovedades();
     };
 

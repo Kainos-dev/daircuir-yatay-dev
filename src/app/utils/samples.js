@@ -119,7 +119,20 @@ export const sampleProducts = [
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760760703/Suela_wlusmg.jpg',
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760760703/Detalle_Suela_kgdd6g.jpg'
         ],
-        variants: [],
+        variants: [
+            {
+                color: { name: 'Azul', hex: '#003F5D' },
+                images: []
+            },
+            {
+                color: { name: 'Chocolate', hex: '#895129' },
+                images: []
+            },
+            {
+                color: { name: 'Suela', hex: '#ECC19C' },
+                images: []
+            }
+        ],
         price: 208320,
     },
     {
@@ -201,6 +214,34 @@ export const sampleProducts = [
                 images: [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760761948/Flores_Arena_muhpyk.jpg'
                 ]
+            },
+            {
+                color: { name: 'Margarita Celeste', hex: '#A2CADF' },
+                images: []
+            },
+            {
+                color: { name: 'Flores Marron', hex: '#78451A' },
+                images: []
+            },
+            {
+                color: { name: 'Rojo', hex: '#C4302B' },
+                images: []
+            },
+            {
+                color: { name: 'Naranja', hex: '#F4A020' },
+                images: []
+            },
+            {
+                color: { name: 'Celeste', hex: '#00AAE4' },
+                images: []
+            },
+            {
+                color: { name: 'Verde Oscuro', hex: '#06402B' },
+                images: []
+            },
+            {
+                color: { name: 'Bordo', hex: '#550000' },
+                images: []
             }
         ],
         price: 30240,
@@ -254,6 +295,14 @@ export const sampleProducts = [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760763072/Negra_pt22vt.jpg'
                 ]
             },
+            {
+                color: { name: 'Azul', hex: '#003F5D' },
+                images: []
+            },
+            {
+                color: { name: 'Rojo', hex: '#C4302B' },
+                images: []
+            }
         ],
         price: 93290,
     },
@@ -264,7 +313,7 @@ export const sampleProducts = [
         coverImages: [],
         variants: [
             {
-                color: { name: 'Amarillo', hex: '#E5BE01' },
+                color: { name: 'Maiz', hex: '#E5BE01' },
                 images: [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760763257/Amarillo_ogm3nn.jpg'
                 ]
@@ -280,6 +329,22 @@ export const sampleProducts = [
                 images: [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760763267/Suela_hr43fz.jpg'
                 ]
+            },
+            {
+                color: { name: 'Chocolate', hex: '#895129' },
+                images: []
+            },
+            {
+                color: { name: 'Rojo', hex: '#C4302B' },
+                images: []
+            },
+            {
+                color: { name: 'Azul', hex: '#003F5D' },
+                images: []
+            },
+            {
+                color: { name: 'Crudo', hex: '#F0F0EB' },
+                images: []
             }
         ],
         price: 94180,
@@ -291,7 +356,7 @@ export const sampleProducts = [
         coverImages: [],
         variants: [
             {
-                color: { name: 'Amarillo', hex: '#E5BE01' },
+                color: { name: 'Maiz', hex: '#E5BE01' },
                 images: [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760763459/Amarillo_wzayjj.jpg',
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760763467/Detalle_Amarillo_pi7lbx.jpg'
@@ -308,6 +373,10 @@ export const sampleProducts = [
                 images: [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760763494/Suela_vvcmc6.jpg'
                 ]
+            },
+            {
+                color: { name: 'Negro', hex: '#000000' },
+                images: []
             }
         ],
         price: 105150,
@@ -344,7 +413,12 @@ export const sampleProducts = [
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760764935/Suela_kjgvpk.jpg',
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760764934/Detalle_Suela_nguy6b.jpg'
         ],
-        variants: [],
+        variants: [
+            {
+                color: { name: 'Suela', hex: '#ECC19C' },
+                images: []
+            }
+        ],
         price: 0,
     },
     {
@@ -355,7 +429,20 @@ export const sampleProducts = [
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760765375/Suela_knvuak.jpg',
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760765374/Detalle_Suela_gnxlxe.jpg'
         ],
-        variants: [],
+        variants: [
+            {
+                color: { name: 'Azul', hex: '#003F5D' },
+                images: []
+            },
+            {
+                color: { name: 'Chocolate', hex: '#895129' },
+                images: []
+            },
+            {
+                color: { name: 'Suela', hex: '#ECC19C' },
+                images: []
+            },
+        ],
         price: 80640,
     },
     {
@@ -366,7 +453,20 @@ export const sampleProducts = [
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760765534/Azul_gyjs1g.jpg',
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760765537/Detalle_Azul_lsal29.jpg'
         ],
-        variants: [],
+        variants: [
+            {
+                color: { name: 'Azul', hex: '#003F5D' },
+                images: []
+            },
+            {
+                color: { name: 'Chocolate', hex: '#895129' },
+                images: []
+            },
+            {
+                color: { name: 'Suela', hex: '#ECC19C' },
+                images: []
+            },
+        ],
         price: 64800,
     },
     {
@@ -376,7 +476,20 @@ export const sampleProducts = [
         coverImages: [
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760765682/Suela_yj2lku.jpg',
         ],
-        variants: [],
+        variants: [
+            {
+                color: { name: 'Azul', hex: '#003F5D' },
+                images: []
+            },
+            {
+                color: { name: 'Chocolate', hex: '#895129' },
+                images: []
+            },
+            {
+                color: { name: 'Suela', hex: '#ECC19C' },
+                images: []
+            },
+        ],
         price: 60000,
     },
     {
@@ -386,7 +499,7 @@ export const sampleProducts = [
         coverImages: [],
         variants: [
             {
-                color: { name: 'Marrón', hex: '#20160C' },
+                color: { name: 'Chocolate', hex: '#895129' },
                 images: [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760765819/Marron_jrookw.jpg',
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760765816/Detalle_Marron_t7766x.jpg'
@@ -398,6 +511,10 @@ export const sampleProducts = [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760765812/Azul_inxzhn.jpg',
                 ]
             },
+            {
+                color: { name: 'Suela', hex: '#ECC19C' },
+                images: []
+            }
         ],
         price: 45360,
     },
@@ -412,6 +529,14 @@ export const sampleProducts = [
                 images: [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760766288/Marron_uuzxim.jpg'
                 ]
+            },
+            {
+                color: { name: 'Azul', hex: '#003F5D' },
+                images: []
+            },
+            {
+                color: { name: 'Suela', hex: '#ECC19C' },
+                images: []
             },
         ],
         price: 37920,
@@ -428,6 +553,14 @@ export const sampleProducts = [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760766377/Marron_mi6ivk.jpg'
                 ]
             },
+            {
+                color: { name: 'Azul', hex: '#003F5D' },
+                images: []
+            },
+            {
+                color: { name: 'Suela', hex: '#ECC19C' },
+                images: []
+            },
         ],
         price: 45600,
     },
@@ -443,6 +576,10 @@ export const sampleProducts = [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760766436/Crudo_vvdjxv.jpg'
                 ]
             },
+            {
+                color: { name: 'Suela', hex: '#ECC19C' },
+                images: []
+            },
         ],
         price: 0,
     },
@@ -454,7 +591,12 @@ export const sampleProducts = [
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760766596/Suela_y_Chocolate_nqvx1n.jpg',
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760766593/Detalle_Suela_y_Chocolate_ggukbq.jpg'
         ],
-        variants: [],
+        variants: [
+            {
+                color: { name: 'Suela con Chocolate', hex: '#895129' },
+                images: []
+            },
+        ],
         price: 196800,
     },
     {
@@ -465,7 +607,20 @@ export const sampleProducts = [
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760766850/Portada_wpch55.jpg',
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760766842/Chocolate_y_Suela_i1q4wt.jpg'
         ],
-        variants: [],
+        variants: [
+            {
+                color: { name: 'Suela con chocolate', hex: '#895129' },
+                images: []
+            },
+            {
+                color: { name: 'Chocolate con Suela', hex: '#ECC19C' },
+                images: []
+            },
+            {
+                color: { name: 'Azul con suela', hex: '#A2CADF' },
+                images: []
+            },
+        ],
         price: 196800,
     },
     {
@@ -518,6 +673,14 @@ export const sampleProducts = [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760907712/Detalle_Crudo_uoy4ro.jpg'
                 ]
             },
+            {
+                color: { name: 'Negro', hex: '#000000' },
+                images: []
+            },
+            {
+                color: { name: 'Suela con Crudo', hex: '#EED6C3' },
+                images: []
+            }
         ],
         price: 130800,
     },
@@ -636,6 +799,14 @@ export const sampleProducts = [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760909251/Cemento_oidwli.jpg'
                 ]
             },
+            {
+                color: { name: 'Verde', hex: '#568203' },
+                images: []
+            },
+            {
+                color: { name: 'Bordo', hex: '#550000' },
+                images: []
+            },
         ],
         price: 133540,
     },
@@ -670,7 +841,24 @@ export const sampleProducts = [
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760909716/Frente_tbiemu.jpg',
             'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760909718/Detalle_Trasero_vbeojx.jpg'
         ],
-        variants: [],
+        variants: [
+            {
+                color: { name: 'Azul', hex: '#003F5D' },
+                images: []
+            },
+            {
+                color: { name: 'Cemento', hex: '#686C5E' },
+                images: []
+            },
+            {
+                color: { name: 'Verde', hex: '#568203' },
+                images: []
+            },
+            {
+                color: { name: 'Bordo', hex: '#550000' },
+                images: []
+            },
+        ],
         price: 133540,
     },
     {
