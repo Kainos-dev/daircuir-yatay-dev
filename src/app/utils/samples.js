@@ -657,7 +657,10 @@ export const sampleProducts = [
         id: '7603',
         name: 'Sandalia Faja Ancha',
         collection: ['news', 'calzado de dama'],
-        coverImages: [],
+        coverImages: [
+            'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760907710/Crudo_erjpm7.jpg',
+            'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760907712/Detalle_Crudo_uoy4ro.jpg'
+        ],
         variants: [
             {
                 color: { name: 'Suela', hex: '#ECC19C' },
@@ -668,10 +671,7 @@ export const sampleProducts = [
             },
             {
                 color: { name: 'Crudo', hex: '#F0F0EB' },
-                images: [
-                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760907710/Crudo_erjpm7.jpg',
-                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760907712/Detalle_Crudo_uoy4ro.jpg'
-                ]
+                images: []
             },
             {
                 color: { name: 'Negro', hex: '#000000' },
