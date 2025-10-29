@@ -665,9 +665,7 @@ export const sampleProducts = [
             {
                 color: { name: 'Suela', hex: '#ECC19C' },
                 images: [
-                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760907717/Portada_jj6hb4.jpg',
-                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760907723/Suela_r3oe28.jpg'
-                ]
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760907717/Portada_jj6hb4.jpg',]
             },
             {
                 color: { name: 'Crudo', hex: '#F0F0EB' },
