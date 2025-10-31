@@ -56,6 +56,36 @@ export const sampleProducts = [
         price: 87170,
     },
     {
+        id: '2555',
+        name: 'Cartera Termera Jorgelina',
+        collection: ['news', 'rincon matero'],
+        coverImages: [
+            'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761869521/Portada_p2dxx4.jpg'
+        ],
+        variants: [
+            {
+                color: { name: 'Chocolate', hex: '#895129' },
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761869522/Chocolate_kqig02.jpg'
+                ]
+            },
+            {
+                color: { name: 'Negro', hex: '#111111' },
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761869521/Suela_uyjupj.jpg'
+                ]
+            },
+            {
+                color: { name: 'Suela', hex: '#ECC19C' },
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761869522/Negro_s4x3wy.jpg',
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761869522/Detalle_ds0xxa.jpg'
+                ]
+            },
+        ],
+        price: 132550,
+    },
+    {
         id: '2267',
         name: 'Estuche Matero Cuero Grande',
         collection: ['rincon matero'],
@@ -426,21 +456,28 @@ export const sampleProducts = [
         name: 'Fichero Bordado Completo',
         collection: ['news', 'senderos', 'accesorios'],
         coverImages: [
-            'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760765375/Suela_knvuak.jpg',
-            'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760765374/Detalle_Suela_gnxlxe.jpg'
+            'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868401/Portada_dwqomk.jpg',
+            'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868401/Detalle_dc1tkb.jpg'
         ],
         variants: [
             {
                 color: { name: 'Azul', hex: '#003F5D' },
-                images: []
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868402/Azul_tywtvi.jpg'
+                ]
             },
             {
                 color: { name: 'Chocolate', hex: '#895129' },
-                images: []
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868402/Chocolate_fld0li.jpg'
+                ]
             },
             {
                 color: { name: 'Suela', hex: '#ECC19C' },
-                images: []
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868401/Suela_tjjfah.jpg',
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868400/Detalle_Suela_xn9vcl.jpg'
+                ]
             },
         ],
         price: 80640,
@@ -474,26 +511,32 @@ export const sampleProducts = [
         name: 'Bandolera Bordada',
         collection: ['news', 'senderos', 'accesorios'],
         coverImages: [
-            'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760765682/Suela_yj2lku.jpg',
+            'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868721/Portada_flujyr.jpg',
         ],
         variants: [
             {
                 color: { name: 'Azul', hex: '#003F5D' },
-                images: []
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868721/Azul_mguzc7.jpg'
+                ]
             },
             {
                 color: { name: 'Chocolate', hex: '#895129' },
-                images: []
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868721/Chocolate_yoow4v.jpg'
+                ]
             },
             {
                 color: { name: 'Suela', hex: '#ECC19C' },
-                images: []
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868720/Suela_pkcgxq.jpg'
+                ]
             },
         ],
         price: 60000,
     },
     {
-        id: '2209',
+        id: '2208',
         name: 'Sobre Grande Bordado Simple',
         collection: ['news', 'senderos', 'accesorios'],
         coverImages: [],
@@ -545,21 +588,21 @@ export const sampleProducts = [
         id: '2211',
         name: 'Sobre Chico Bordado Completo',
         collection: ['news', 'senderos', 'accesorios'],
-        coverImages: [],
+        coverImages: [
+            'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868138/Portada_e0n8cn.jpg'
+        ],
         variants: [
             {
                 color: { name: 'Chocolate', hex: '#895129' },
                 images: [
-                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760766377/Marron_mi6ivk.jpg'
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868138/Chocolate_ngbgvf.jpg'
                 ]
             },
             {
-                color: { name: 'Azul', hex: '#003F5D' },
-                images: []
-            },
-            {
                 color: { name: 'Suela', hex: '#ECC19C' },
-                images: []
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868138/Suela_kbayfh.jpg'
+                ]
             },
         ],
         price: 45600,
@@ -681,6 +724,36 @@ export const sampleProducts = [
             }
         ],
         price: 130800,
+    },
+    {
+        id: '2512',
+        name: 'Mini Hermes Trenzado',
+        collection: ['news', 'senderos', 'accesorios'],
+        coverImages: [
+            'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868977/Portada_2_sorsre.jpg'
+        ],
+        variants: [
+            {
+                color: { name: 'Azul', hex: '#003F5D' },
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868986/Azul_prxqzw.jpg',
+                ]
+            },
+            {
+                color: { name: 'Chocolate', hex: '#895129' },
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868978/Chocolate_q2enqj.jpg'
+                ]
+            },
+            {
+                color: { name: 'Suela', hex: '#ECC19C' },
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868973/Suela_hmxc8p.jpg',
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761868976/Detalle_h6itke.jpg'
+                ]
+            },
+        ],
+        price: 174000,
     },
     {
         id: '2563',
@@ -826,6 +899,29 @@ export const sampleProducts = [
                 color: { name: 'Chocolate', hex: '#895129' },
                 images: [
                     'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1760909453/Chocolate_kgt9uw.jpg'
+                ]
+            },
+        ],
+        price: 160630,
+    },
+    {
+        id: '2565',
+        name: 'Termera Morral Cuero',
+        collection: ['rincon matero'],
+        coverImages: [
+            'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761869839/Portada_q9w0bj.jpg'
+        ],
+        variants: [
+            {
+                color: { name: 'Chocolate', hex: '#895129' },
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761869841/Chocolate_mong64.jpg'
+                ]
+            },
+            {
+                color: { name: 'Suela', hex: '#ECC19C' },
+                images: [
+                    'https://res.cloudinary.com/ddbhwo6fn/image/upload/f_auto,q_auto/v1761869838/Suela_hmpchc.jpg'
                 ]
             },
         ],

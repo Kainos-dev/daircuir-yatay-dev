@@ -99,7 +99,7 @@ export const ProductCard = ({ product }) => {
                             )}
                         </div>
                     </div>
-                    <span>{product.id}</span>
+                    {/* <span>{product.id}</span> */}
                 </div>
             </div>
         </Link>
